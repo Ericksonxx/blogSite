@@ -11,9 +11,6 @@ import Typography from '@mui/material/Typography';
 import CircularProgress from '@mui/material/CircularProgress';
 
 
-
-
-
 interface Post {
   id: number;
   body: string;
@@ -58,9 +55,9 @@ function App() {
       {postData && photosData  ? (
               <div className="bg-gray-100 min-h-screen text-gray-800 p-6">
               <div className="w-[80%] mx-auto mt-24">
-              <Typography gutterBottom variant="h3" component="div">
+                <Typography gutterBottom variant="h3" component="div">
                   Latest Posts
-              </Typography>
+                </Typography>
                 <div>
                   {postData && (
                     <div className='lg:grid lg:grid-cols-2 xl:grid-cols-3 gap-4'>
@@ -77,16 +74,15 @@ function App() {
                         };
         
                         return (
-                        <Link key={i} to={{pathname: `/posts/${post.id}`,}} state={object}>
-                           <Card className='my-6 min-h-[325px]'>
-                            {photo?.url && (
-                              <CardMedia
-                                sx={{ height: 140 }}
-                                image={photo.url}
-                                title="post featured image"
-                              />
-                    )}
-
+                          <Link key={i} to={{pathname: `/posts/${post.id}`,}} state={object}>
+                            <Card className='my-6 min-h-[325px]'>
+                              {photo?.url && (
+                                <CardMedia
+                                  sx={{ height: 140 }}
+                                  image={photo.url}
+                                  title="post featured image"
+                                />
+                              )}
                               <CardContent>
                                 <Typography gutterBottom variant="h5" component="div">
                                     {post.title}
